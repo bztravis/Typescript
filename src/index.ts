@@ -219,3 +219,7 @@ type forArray = (typeof SOURCES)[number]; // demonstrating effect of as const on
 type forObj = typeof SOURCES_OBJ; // demonstrating effect of as const on SOURCES, as well as an "indexed type query"
 
 type Nullish = {};
+
+type ValueOf<T> = T[keyof T];
+type Foo = { a: string; b: number };
+type ValueOfFoo = ValueOf<Foo>; // string | number
