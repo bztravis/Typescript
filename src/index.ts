@@ -1,6 +1,6 @@
-// TODO: "as" keyword "type assertion": promises to typescript that a value is a certain type
+// TODO: "as" keyword "type assertion / cast": promises to typescript that a value is a certain type, should be avoided unless you're sure they're necessary, often codesmell
 // TODO: "as const", used on literals, says that properties/indices will not change value
-// TODO: readonly, modifies an existing type/interface, the type is a constant type, after clearing a literal of readonly type it deeploy protects re-assignment
+// TODO: readonly, modifies an existing type/interface, the type is a constant type, after clearing a literal of readonly type it deeply protects re-assignment
 // TODO: discriminated type union: each type has a literal value which discriminates between types
 // TODO: generics
 // TODO: utility types: Partial<>, Required<>, Record<,>, Omit<,>, Pick<,>
@@ -172,7 +172,7 @@ type Param = {
   [index: string]: unknown;
 };
 
-// completely non-assignable, cannot reassign values or the entire variable to a new literal
+// readonly: completely non-assignable, cannot reassign values or the entire variable to a new literal
 type Param2 = {
   // "index signature", a typescript thing
   readonly [index: string]: unknown;
